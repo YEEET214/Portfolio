@@ -1,10 +1,10 @@
-<!-- IMPORTANT: Save this file as <index.html> (not as .tsx/.ts/.jsx/.react). If your build system treats it as a TypeScript/React file you'll get a syntax error like "Unexpected token (1:0)" because HTML starting with '<' isn't valid TSX at the top level. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="icon.png">
   <style>
     :root {
       --bg-light: #f8f9fb;
@@ -91,15 +91,15 @@
 
     .carousel-controls { display: flex; gap: 0.5rem; align-items: center; justify-content: center; margin-top: 0.75rem; }
     .control-btn { background: var(--accent); border: none; color: white; padding: 0.6rem 0.8rem; border-radius: 10px; cursor: pointer; font-weight: 600; }
-    .control-circle { background: transparent; border: 1px solid rgba(0,0,0,0.06); width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; }
-    body.dark .control-circle { border-color: rgba(255,255,255,0.06); }
+    .control-circle { background: transparent; border: 1px solid rgba(0,0,0,0.06); width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; cursor: pointer;}
+    body.dark .control-circle { border-color: rgb(255, 255, 255); color: rgb(255, 255, 255);}
 
     /* Contact */
     .contact { text-align: center; }
     .social-btns { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; }
     .social-btns a { padding: 0.6rem 1rem; border-radius: 8px; text-decoration: none; color: white; background: var(--accent); font-weight: 600; }
 
-    /* Cozy footer */
+    /* footer */
     footer { text-align: center; color: var(--muted); padding: 2rem 1rem; }
   </style>
 </head>
@@ -107,7 +107,7 @@
   <header>
     <div class="brand">
       <div style="width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#8a7bff);"></div>
-      <h1>My Portfolio</h1>
+      <h1>Younis AL Riyami</h1>
     </div>
 
     <nav>
@@ -123,16 +123,16 @@
       <h2>About Me</h2>
       <div class="about-grid">
         <div>
-          <p>Hi — I'm a developer who mixes professionalism with a cozy, human touch. I build apps, interfaces, and experiments that are reliable and delightful.
+          <p>text
           </p>
-          <p>I focus on clean code, good architecture, and thoughtful UX. When I'm not coding I like making coffee, sketching interfaces, and learning new tools.</p>
+          <p>TEXT</p>
         </div>
         <aside class="profile-card">
           <strong>Quick Info</strong>
           <ul style="margin:0.75rem 0 0 1rem;padding:0;list-style:none;color:var(--muted);">
-            <li>Location: Your City</li>
-            <li>Available for: Freelance / Full-time</li>
-            <li>Primary: JavaScript, HTML, CSS</li>
+            <li>Location: Dundee</li>
+            <li>Available for: Part-time</li>
+            <li>Primary: Java, Python, HTML, JavaScript, Lua</li>
           </ul>
         </aside>
       </div>
@@ -144,29 +144,32 @@
         <div class="carousel" aria-roledescription="carousel">
           <div class="carousel-viewport">
             <div class="carousel-track" id="carouselTrack">
-              <!-- Each .project is clickable and should open the project's GitHub. Replace the hrefs below with your actual repo URLs. -->
-              <div class="project" data-href="PROJECT 1 LINK" tabindex="0">
+              
+              <!-- link to repo Pebl -->
+              <div class="project" data-href="https://github.com/dev-kit77/pebl-client" tabindex="0">
                 <div>
-                  <h3>Project One</h3>
-                  <p>Short description of Project One — tools used, purpose, highlight.</p>
+                  <h3>Pebl Social media app</h3>
+                  <p>PC text based Social media app with a windowed interface entirely written in Java. this started as a university project, but continues to evolve.</p>
                 </div>
-                <img src="project1.jpg" alt="Screenshot of Project One">
+                <img src="pebl.png" alt="Pebl Client Screenshot">
               </div>
 
-              <div class="project" data-href="YOUR_PROJECT_2_GITHUB" tabindex="0">
+              <!-- link to repo Shebang -->
+              <div class="project" data-href="https://github.com/dev-kit77/Shebang" tabindex="0">
                 <div>
-                  <h3>Project Two</h3>
-                  <p>Short description of Project Two — tools used and impact.</p>
+                  <h3>Shebang</h3>
+                  <p>A Robust To-Do app written in Shell to use in Bash terminal primarily for Linux users.</p>
                 </div>
-                <img src="project2.jpg" alt="Screenshot of Project Two">
+                <img src="shebang.png" alt="Shebang in Bash terminal">
               </div>
 
-              <div class="project" data-href="YOUR_PROJECT_3_GITHUB" tabindex="0">
+              <!-- link to repo Devious bubble >:) -->
+              <div class="project" data-href="https://github.com/GriffinSego/DeviousBubbles" tabindex="0">
                 <div>
-                  <h3>Project Three</h3>
-                  <p>Short description of Project Three — challenges solved and results.</p>
+                  <h3>The Devious Bubble</h3>
+                  <p>Game Jam submission for Global Game Jam 2024 by team Dundee. A plotformer where you play as a bubble trying to reach its significant other by propelling yourself in different directions to avoid obstacles.</p>
                 </div>
-                <img src="project3.jpg" alt="Screenshot of Project Three">
+                <img src="deviousbubble.png" alt="Image of The Devious Bubble gameplay">
               </div>
             </div>
           </div>
@@ -180,13 +183,14 @@
       </div>
     </section>
 
+    <!-- contacts -->
     <section id="contact" class="contact">
       <h2>Contact</h2>
       <p>If you'd like to get in touch, feel free to reach out through any of the links below or send a message.</p>
       <div class="social-btns" role="list">
         <a id="githubLink" href="https://github.com/YEEET214" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a id="linkedinLink" href="https://www.linkedin.com/in/younisalriyami207" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a id="cvLink" href="YOUR_CV_LINK" target="_blank" rel="noopener noreferrer">View CV</a>
+        <a id="cvLink" href="CV_OCT_2025.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
       </div>
     </section>
   </main>
@@ -196,7 +200,7 @@
   <script>
     // Wrap JS in DOMContentLoaded for safety and to avoid errors if loaded in environments that parse differently.
     document.addEventListener('DOMContentLoaded', () => {
-      // Theme toggle (safe: checks element exists)
+
       const themeToggle = document.getElementById('themeToggle');
       if (themeToggle) {
         themeToggle.addEventListener('click', () => {
@@ -205,7 +209,7 @@
         });
       }
 
-      // Carousel setup (robust checks)
+      // Carousel setup
       const track = document.getElementById('carouselTrack');
       if (!track) return; // nothing more to do if carousel missing
 
@@ -270,13 +274,11 @@
       // ensure correct position on load
       updateCarousel();
 
-      // Optional: auto-cycle every 7 seconds (comment out if not desired)
       let autoCycle = true;
       if (autoCycle) {
         setInterval(() => { index = (index + 1) % projectNodes.length; updateCarousel(); }, 7000);
       }
 
-      // set year in footer
       const yearEl = document.getElementById('year');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
     });
