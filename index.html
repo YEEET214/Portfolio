@@ -1,107 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- TODO picture of me, aligned with about and quick info. Align Projects title centre of screen. Add Scribble,  -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
   <link rel="icon" type="image/x-icon" href="icon.png">
-  <style>
-    :root {
-      --bg-light: #f8f9fb;
-      --bg-dark: #0f1720;
-      --text-light: #222;
-      --text-dark: #e6eef8;
-      --accent: #6c63ff;
-      --card-bg-light: #ffffff;
-      --card-bg-dark: #111316;
-      --muted: #6b7280;
-    }
-
-    /* Reset & basics */
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background-color: var(--bg-light);
-      color: var(--text-light);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      transition: background 0.35s ease, color 0.35s ease;
-    }
-
-    body.dark {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
-
-    /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 1.5rem;
-      background: var(--card-bg-light);
-      box-shadow: 0 6px 20px rgba(12,14,20,0.06);
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      backdrop-filter: blur(6px);
-    }
-    body.dark header { background: rgba(16,18,20,0.8); }
-
-    header .brand {
-      display: flex; align-items: center; gap: 0.75rem;
-    }
-    header h1 { font-size: 1.125rem; margin: 0; font-weight: 600; letter-spacing: -0.01em; }
-    header nav { display: flex; align-items: center; gap: 0.75rem; }
-    header nav a { color: inherit; text-decoration: none; font-weight: 500; padding: 0.25rem 0.5rem; border-radius: 6px; }
-    header nav a:hover { background: rgba(0,0,0,0.04); }
-    body.dark header nav a:hover { background: rgba(255,255,255,0.03); }
-
-    .toggle-btn {
-      background: none; border: 1px solid rgba(0,0,0,0.06); padding: 0.35rem 0.55rem; border-radius: 8px; cursor: pointer; font-size: 1rem;
-    }
-    body.dark .toggle-btn { border-color: rgba(255,255,255,0.06); }
-
-    /* Sections */
-    main { max-width: 1000px; margin: 2.5rem auto; padding: 0 1.25rem; }
-    section { padding: 2.25rem 0; }
-    h2 { font-size: 1.6rem; margin: 0 0 0.75rem 0; }
-    p { margin: 0 0 1rem 0; color: var(--muted); }
-
-    /* About */
-    .about-grid { display: grid; grid-template-columns: 1fr 320px; gap: 1.25rem; align-items: center; }
-    @media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; } }
-    .profile-card { background: var(--card-bg-light); padding: 1.25rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(12,14,20,0.06); }
-    body.dark .profile-card { background: rgba(255,255,255,0.03); }
-
-    /* Projects / Carousel */
-    .projects { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
-    .carousel { width: 100%; max-width: 820px; position: relative; }
-    .carousel-viewport { overflow: hidden; border-radius: 14px; }
-    .carousel-track { display: flex; transition: transform 0.45s cubic-bezier(.2,.9,.2,1); }
-    .project { min-width: 100%; padding: 1.25rem; background: var(--card-bg-light); border-radius: 12px; display: grid; grid-template-columns: 1fr 300px; gap: 1rem; align-items: center; cursor: pointer; }
-    body.dark .project { background: rgba(255,255,255,0.02); }
-    @media (max-width: 760px) { .project { grid-template-columns: 1fr; } }
-
-    .project img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
-    .project h3 { margin: 0 0 0.5rem 0; }
-    .project p { margin: 0; color: var(--muted); }
-
-    .carousel-controls { display: flex; gap: 0.5rem; align-items: center; justify-content: center; margin-top: 0.75rem; }
-    .control-btn { background: var(--accent); border: none; color: white; padding: 0.6rem 0.8rem; border-radius: 10px; cursor: pointer; font-weight: 600; }
-    .control-circle { background: transparent; border: 1px solid rgba(0,0,0,0.06); width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; cursor: pointer;}
-    body.dark .control-circle { border-color: rgb(255, 255, 255); color: rgb(255, 255, 255);}
-
-    /* Contact */
-    .contact { text-align: center; }
-    .social-btns { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; }
-    .social-btns a { padding: 0.6rem 1rem; border-radius: 8px; text-decoration: none; color: white; background: var(--accent); font-weight: 600; }
-
-    /* footer */
-    footer { text-align: center; color: var(--muted); padding: 2rem 1rem; }
-  </style>
+  <link rel="stylesheet" href="Style.css">
 </head>
 <body>
   <header>
@@ -121,13 +26,13 @@
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <div class="about-grid">
-        <div>
+      <div style="display: flex; align-items: center;">
+        <div style="width: 50%; margin-right: 1rem;">
           <p>Student of Computer Science in University of Dundee
           </p>
           <p>Looking for long-term full-time employment to assist me throughout my studies. I completed multiple projects that involved learning new technologies, effective communication, adapting to new environments, and properly delegating tasks. I am looking forward to mastering my skills in the near future. Some of the projects are listed below, with more to come.</p>
         </div>
-        <aside class="profile-card">
+        <aside class="profile-card" style="margin-right: 1rem;">
           <strong>Quick Info</strong>
           <ul style="margin:0.75rem 0 0 1rem;padding:0;list-style:none;color:var(--muted);">
             <li>Location: Dundee</li>
@@ -136,11 +41,16 @@
             <li>Soft Skills: Adaptability, Communication, Teamwork</li>
           </ul>
         </aside>
+        <div>
+          <img style="object-fit: contain; height: 200px; border-radius: 12px;" src="me_young_prof.jpg" alt="Picture of me">
+        </div>
+        
       </div>
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
+
+        <h2 style="text-align: center;">Projects</h2>
       <div class="projects">
         <div class="carousel" aria-roledescription="carousel">
           <div class="carousel-viewport">
@@ -171,6 +81,15 @@
                   <p>Game Jam submission for Global Game Jam 2024 by team Dundee. A platformer where you play as a bubble trying to reach its goal by propelling yourself in different directions to avoid obstacles. This was made using the Defold game engine and written in Lua with a team of two developers, an artist, and sound designer in 2 days through effective communication and teamwork.</p>
                 </div>
                 <img src="deviousbubble.png" alt="Image of The Devious Bubble gameplay">
+              </div>
+
+              <!-- link to repo Scribble >:) -->
+              <div class="project" data-href="https://github.com/YEEET214/ScribbleFinal" tabindex="0">
+                <div>
+                  <h3>Scribble</h3>
+                  <p>A terminal based game similar to Scrabble&#8482. Entirely built in Java with Save and Load features and support for Multiplayer, this project was built in order to understant 2D arrays in Java and how to read/write files to and from disk.</p>
+                </div>
+                <img src="scribble.png" alt="Scribble in terminal">
               </div>
             </div>
           </div>
